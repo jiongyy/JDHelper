@@ -141,7 +141,7 @@ class JDHelper(object):
                     sys.exit(0)
             except Exception as e:
                 log.info('抢购发生异常，稍后继续执行:', e)
-            time.sleep(random.randint(10, 100) / 1000)
+            time.sleep(random.randint(100, 300) / 1000)
 
     # DESCRIPTION:添加抢购商品到购物车，然后抢购开始后直接进结算页面
     # INPUT:    None
@@ -160,6 +160,7 @@ class JDHelper(object):
             'Referer': 'https://item.jd.com/{}.html'.format(self.sku_id),
         }
         rsp = self.session.get(url=url, params=payload, headers=headers)
+        log.debug(rsp)
         if rsp.status_code == requests.codes.OK:
             log.info('成功加入购物')
         else:
@@ -178,6 +179,7 @@ class JDHelper(object):
         }
 
         rsp = self.session.get(url=url, headers=headers)
+        log.debug(rsp)
         if rsp.status_code == requests.codes.OK:
             log.info('去结算')
             return True
@@ -198,6 +200,7 @@ class JDHelper(object):
             'https://trade.jd.com/shopping/order/getOrderInfo.action',
         }
         rsp = self.session.get(url=url, params=payload, headers=headers)
+        log.debug(rsp)
         if rsp.status_code == requests.codes.OK:
             log.info('正在提交订单...')
         else:
