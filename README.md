@@ -1,5 +1,8 @@
 # JDHelper
 
+# 本项目纯粹为兴趣使然，对于使用造成的一切后果，由使用者自行承担
+# 另外项目还处在开发阶段，不保证实际使用效果，即使有用，也请不要拿来当黄牛
+
 # 急求需要在京东抢购的商品链接做测试！！！
 
 ##### 非常感谢原作者 https://github.com/andyzys/jd_seckillk、 https://github.com/phanker/jd-seckill-maotai等项目提供的代码（未全部列出），本项目在以上项目基础上修改而来，在使用以上项目抢购K40的时候发现接口 https://itemko.jd.com/itemShowBtn 好像失效了，目前返回的url一直是空的，所以使用以上项目重写抢购流畅

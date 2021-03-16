@@ -130,6 +130,7 @@ class JDHelper(object):
     def flash_sale(self):
         self.login()
         log.info('登录成功')
+        self.timers.start()
         while True:
             try:
                 if not (self.checkout()):
